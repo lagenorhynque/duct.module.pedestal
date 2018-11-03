@@ -22,4 +22,7 @@
                  [org.slf4j/jcl-over-slf4j "1.7.25"]
                  [org.slf4j/jul-to-slf4j "1.7.25"]
                  [org.slf4j/log4j-over-slf4j "1.7.25"]]
-  :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]]}})
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
+                                  [pjstadig/humane-test-output "0.8.3"]]
+                   :injections [(require 'pjstadig.humane-test-output)
+                                (pjstadig.humane-test-output/activate!)]}})
