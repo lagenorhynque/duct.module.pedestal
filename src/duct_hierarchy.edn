@@ -1,0 +1,2 @@
+{:duct.module/pedestal [:duct/module]
+ :duct.server/pedestal [:duct/server]}
