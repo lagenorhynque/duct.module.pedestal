@@ -24,5 +24,13 @@
                  [org.slf4j/log4j-over-slf4j "1.7.25"]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
                                   [pjstadig/humane-test-output "0.8.3"]]
+                   :plugins [[jonase/eastwood "0.3.1"]
+                             [lein-cljfmt "0.6.1"]
+                             [lein-cloverage "1.0.13"]
+                             [lein-kibit "0.1.6"]]
+                   :aliases {"test-coverage" ^{:doc "Execute cloverage."}
+                             ["with-profile" "test" "cloverage" "--codecov" "--junit"]
+                             "lint" ^{:doc "Execute cljfmt check, eastwood and kibit."}
+                             ["do" ["cljfmt" "check"] ["eastwood"] ["kibit"]]}
                    :injections [(require 'pjstadig.humane-test-output)
                                 (pjstadig.humane-test-output/activate!)]}})
