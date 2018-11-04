@@ -25,15 +25,17 @@
             config {:duct.core/project-ns 'some-api
                     :duct.core/environment :production
                     :duct.module/pedestal {:service service-map
-                                           :default? false}}]
+                                           :default? false
+                                           :dev? true}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :production
                   :duct.module/pedestal {:service service-map
-                                         :default? false}
+                                         :default? false
+                                         :dev? true}
                   :duct.server/pedestal
                   {:service (merge sut/prod-service service-map)
                    :default? false
-                   :dev? false}}
+                   :dev? true}}
                  (duct/prep config))))))
   (t/testing "environment: development"
     (t/testing "no options"
@@ -54,13 +56,15 @@
             config {:duct.core/project-ns 'some-api
                     :duct.core/environment :development
                     :duct.module/pedestal {:service service-map
-                                           :default? false}}]
+                                           :default? false
+                                           :dev? false}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :development
                   :duct.module/pedestal {:service service-map
-                                         :default? false}
+                                         :default? false
+                                         :dev? false}
                   :duct.server/pedestal
                   {:service (merge sut/dev-service service-map)
                    :default? false
-                   :dev? true}}
+                   :dev? false}}
                  (duct/prep config)))))))

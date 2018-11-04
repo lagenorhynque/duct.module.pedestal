@@ -65,7 +65,7 @@
    :development dev-service})
 
 (defmethod ig/init-key :duct.module/pedestal
-  [_ {:keys [service default?]
+  [_ {:keys [service default? dev?]
       :or {default? true}
       :as options}]
   {:req #{}
@@ -76,4 +76,4 @@
             {:duct.server/pedestal {:service (merge (get default-service environment)
                                                     service)
                                     :default? default?
-                                    :dev? (= environment :development)}})))})
+                                    :dev? (if (some? dev?) dev? (= environment :development))}})))})
