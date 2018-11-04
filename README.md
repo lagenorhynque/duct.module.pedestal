@@ -11,7 +11,7 @@ A Duct module that adds a web server and useful interceptors of [Pedestal](https
 To install, add the following to your project `:dependencies`:
 
 ```clj
-[duct.module.pedestal "0.1.0"]
+[duct.module.pedestal "0.2.0"]
 ```
 
 ## Usage
