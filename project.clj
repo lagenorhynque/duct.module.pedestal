@@ -22,6 +22,7 @@
                  [org.slf4j/jcl-over-slf4j "1.7.25"]
                  [org.slf4j/jul-to-slf4j "1.7.25"]
                  [org.slf4j/log4j-over-slf4j "1.7.25"]]
+  :deploy-repositories [["releases" :clojars]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
                                   [pjstadig/humane-test-output "0.8.3"]]
                    :plugins [[jonase/eastwood "0.3.3"]
