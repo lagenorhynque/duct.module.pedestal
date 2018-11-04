@@ -1,5 +1,6 @@
 # duct.module.pedestal
 
+[![Clojars Project](https://img.shields.io/clojars/v/duct.module.pedestal.svg)](https://clojars.org/duct.module.pedestal)
 [![Circle CI](https://circleci.com/gh/lagenorhynque/duct.module.pedestal.svg?style=shield)](https://circleci.com/gh/lagenorhynque/duct.module.pedestal)
 [![codecov](https://codecov.io/gh/lagenorhynque/duct.module.pedestal/branch/master/graph/badge.svg)](https://codecov.io/gh/lagenorhynque/duct.module.pedestal)
 
@@ -15,4 +16,21 @@ To install, add the following to your project `:dependencies`:
 
 ## Usage
 
-FIXME
+To add this module to your configuration, add a reference to `:duct.module/pedestal`:
+
+```edn
+{:duct.core/project-ns some-api
+ :duct.core/environment :production
+
+ :duct.module/pedestal
+ {:service #:io.pedestal.http{:routes #ig/ref :some-api.routes/routes
+                              :port #duct/env ["SERVER_PORT" Int :or 8080]}}
+
+ :some-api.routes/routes {,,,}}
+```
+
+`:duct.module/pedestal` can have three options:
+
+- `:service`: arbitrary [service map](http://pedestal.io/reference/service-map) which overrides the default configuration
+- `:default?`: whether to insert [default-intercetors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-default-interceptors) (default: true)
+- `:dev?`: whether to insert [dev-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-dev-interceptors) (default: true if `:duct.core/environment` is `:development`)
