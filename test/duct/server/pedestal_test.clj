@@ -17,7 +17,8 @@
              #{["/greet" :get respond-hello :route-name :greet]}))
 
 ;; example service map
-(def service-map #:io.pedestal.http{:routes routes})
+(def service-map #:io.pedestal.http{:routes routes
+                                    :port 8888})
 
 (def url-for (route/url-for-routes routes))
 
@@ -36,7 +37,8 @@
 (t/deftest server-test
   (let [config {:duct.core/project-ns 'some-api
                 :duct.core/environment :development
-                :duct.module/pedestal {:service service-map}}]
+                :duct.module/pedestal {}
+                :duct.server/pedestal {:service service-map}}]
     (with-system [sys (duct/prep config)]
       (let [service (service-fn sys)
             {:keys [status body]} (response-for service

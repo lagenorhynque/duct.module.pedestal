@@ -1,5 +1,6 @@
 (ns duct.module.pedestal
   (:require [duct.core :as duct]
+            [duct.core.merge :as merge]
             [integrant.core :as ig]
             [io.pedestal.http :as http]))
 
@@ -60,12 +61,12 @@
           ;; Content Security Policy (CSP) is mostly turned off in dev mode
           ::http/secure-headers {:content-security-policy-settings {:object-src "'none'"}}}))
 
-(def default-service
+(def base-service
   {:production prod-service
    :development dev-service})
 
 (defmethod ig/init-key :duct.module/pedestal
-  [_ {:keys [service default? dev?]
+  [_ {:keys [default? dev?]
       :or {default? true}
       :as options}]
   {:req #{}
@@ -73,7 +74,6 @@
          (let [environment (get-environment config options)]
            (duct/merge-configs
             config
-            {:duct.server/pedestal {:service (merge (get default-service environment)
-                                                    service)
+            {:duct.server/pedestal {:base-service (merge/displace (get base-service environment))
                                     :default? default?
                                     :dev? (if (some? dev?) dev? (= environment :development))}})))})

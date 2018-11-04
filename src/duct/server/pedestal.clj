@@ -3,9 +3,9 @@
             [io.pedestal.http :as http]))
 
 (defmethod ig/init-key :duct.server/pedestal
-  [_ {:keys [service default? dev?]}]
+  [_ {:keys [service base-service default? dev?]}]
   (println (str "\nCreating your " (when dev? "[DEV] ") "server..."))
-  (cond-> service
+  (cond-> (merge base-service service)
     ;; Wire up interceptor chains
     default? http/default-interceptors
     dev? http/dev-interceptors

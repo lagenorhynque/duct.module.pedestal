@@ -16,21 +16,26 @@ To install, add the following to your project `:dependencies`:
 
 ## Usage
 
-To add this module to your configuration, add a reference to `:duct.module/pedestal`:
+To add this module to your configuration, add a reference to `:duct.module/pedestal` (and `:duct.server/pedestal` if necessary):
 
 ```edn
 {:duct.core/project-ns some-api
  :duct.core/environment :production
 
- :duct.module/pedestal
+ :duct.module/pedestal {}
+ :duct.server/pedestal
  {:service #:io.pedestal.http{:routes #ig/ref :some-api.routes/routes
                               :port #duct/env ["SERVER_PORT" Int :or 8080]}}
 
  :some-api.routes/routes {,,,}}
 ```
 
-`:duct.module/pedestal` can have three options:
+- `:duct.module/pedestal` can have two options:
 
-- `:service`: arbitrary [service map](http://pedestal.io/reference/service-map) which overrides the default configuration
-- `:default?`: whether to insert [default-intercetors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-default-interceptors) (default: true)
-- `:dev?`: whether to insert [dev-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-dev-interceptors) (default: true if `:duct.core/environment` is `:development`)
+    - `:default?`: whether to insert [default-intercetors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-default-interceptors) (default: true)
+    - `:dev?`: whether to insert [dev-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-dev-interceptors) (default: true if `:duct.core/environment` is `:development`)
+
+- `:duct.server/pedestal` can have two options:
+
+    - `:base-service`: base [service map](http://pedestal.io/reference/service-map) (default: configuration based on [pedestal-service](https://github.com/pedestal/pedestal/tree/master/service-template))
+    - `:service`: arbitrary [service map](http://pedestal.io/reference/service-map) which overrides `:base-service` configuration
