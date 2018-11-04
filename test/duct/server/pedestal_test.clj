@@ -1,8 +1,6 @@
 (ns duct.server.pedestal-test
   (:require [clojure.test :as t]
             [duct.core :as duct]
-            [duct.module.pedestal :as module]
-            [duct.server.pedestal]
             [integrant.core :as ig]
             [io.pedestal.http.route :as route]
             [io.pedestal.test :refer [response-for]]))

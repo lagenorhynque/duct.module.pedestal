@@ -24,7 +24,7 @@
                  [org.slf4j/log4j-over-slf4j "1.7.25"]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
                                   [pjstadig/humane-test-output "0.8.3"]]
-                   :plugins [[jonase/eastwood "0.3.1"]
+                   :plugins [[jonase/eastwood "0.3.3"]
                              [lein-cljfmt "0.6.1"]
                              [lein-cloverage "1.0.13"]
                              [lein-kibit "0.1.6"]]
