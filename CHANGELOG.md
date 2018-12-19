@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [1.0.0] - 2018-12-19
+### Changed
+- Update dependencies
+    - Pedestal 0.5.5
+
 ## [0.3.0] - 2018-11-05
 ### Changed
 - Use `duct.core/merge-configs` for merging base-service and service
@@ -18,6 +23,7 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.3.0...1.0.0
 [0.3.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.1.0...0.2.0
