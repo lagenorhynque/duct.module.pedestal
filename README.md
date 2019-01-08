@@ -19,15 +19,19 @@ To install, add the following to your project `:dependencies`:
 To add this module to your configuration, add a reference to `:duct.module/pedestal` (and `:duct.server/pedestal` if necessary):
 
 ```edn
-{:duct.core/project-ns some-api
- :duct.core/environment :production
+{:duct.profile/base
+ {:duct.core/project-ns some-api
+  :duct.core/environment :production
 
- :duct.module/pedestal {}
- :duct.server/pedestal
- {:service #:io.pedestal.http{:routes #ig/ref :some-api.routes/routes
-                              :port #duct/env ["SERVER_PORT" Int :or 8080]}}
+  :duct.server/pedestal
+  {:service #:io.pedestal.http{:routes #ig/ref :some-api.routes/routes
+                               :port #duct/env ["SERVER_PORT" Int :or 8080]}}
 
- :some-api.routes/routes {,,,}}
+  :some-api.routes/routes {,,,}}
+
+ :duct.profile/prod {}
+
+ :duct.module/pedestal {}}
 ```
 
 - `:duct.module/pedestal` can have two options:

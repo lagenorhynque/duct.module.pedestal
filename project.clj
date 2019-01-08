@@ -3,9 +3,9 @@
   :url "https://github.com/lagenorhynque/duct.module.pedestal"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :min-lein-version "2.0.0"
+  :min-lein-version "2.8.1"
   :dependencies [;; Duct
-                 [duct/core "0.6.2"]
+                 [duct/core "0.7.0"]
 
                  ;; Pedestal
                  [io.pedestal/pedestal.service "0.5.5"]
@@ -23,7 +23,7 @@
                  [org.slf4j/jul-to-slf4j "1.7.25"]
                  [org.slf4j/log4j-over-slf4j "1.7.25"]]
   :deploy-repositories [["releases" :clojars]]
-  :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.0"]
                                   [pjstadig/humane-test-output "0.9.0"]]
                    :plugins [[jonase/eastwood "0.3.4"]
                              [lein-cljfmt "0.6.3"]
