@@ -3,10 +3,15 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [2.0.0] - 2019-01-08
+### Changed
+- Support [duct/core 0.7.0](https://github.com/duct-framework/core/blob/master/CHANGELOG.md#070-2018-01-05) (**BREAKING CHANGE**)
+
 ## [1.0.0] - 2018-12-19
 ### Changed
+- based on [duct/core 0.6.2](https://github.com/duct-framework/core/blob/master/CHANGELOG.md#062-2017-12-17)
 - Update dependencies
-    - Pedestal 0.5.5
+    - [Pedestal 0.5.5](https://github.com/pedestal/pedestal/blob/master/CHANGELOG.md#055---december-18-2018)
 
 ## [0.3.0] - 2018-11-05
 ### Changed
@@ -23,7 +28,8 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/1.0.0...2.0.0
 [1.0.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.3.0...1.0.0
 [0.3.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.1.0...0.2.0
