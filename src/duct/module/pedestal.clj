@@ -69,11 +69,10 @@
   [_ {:keys [default? dev?]
       :or {default? true}
       :as options}]
-  {:req #{}
-   :fn (fn [config]
-         (let [environment (get-environment config options)]
-           (duct/merge-configs
-            config
-            {:duct.server/pedestal {:base-service (merge/displace (get base-service environment))
-                                    :default? default?
-                                    :dev? (if (some? dev?) dev? (= environment :development))}})))})
+  (fn [config]
+    (let [environment (get-environment config options)]
+      (duct/merge-configs
+       config
+       {:duct.server/pedestal {:base-service (merge/displace (get base-service environment))
+                               :default? default?
+                               :dev? (if (some? dev?) dev? (= environment :development))}}))))

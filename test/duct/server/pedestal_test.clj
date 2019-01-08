@@ -35,11 +35,12 @@
          (ig/halt! ~bound-var)))))
 
 (t/deftest server-test
-  (let [config {:duct.core/project-ns 'some-api
-                :duct.core/environment :development
-                :duct.module/pedestal {}
-                :duct.server/pedestal {:service service-map}}]
-    (with-system [sys (duct/prep config)]
+  (let [config {:duct.profile/base
+                {:duct.core/project-ns 'some-api
+                 :duct.core/environment :development
+                 :duct.server/pedestal {:service service-map}}
+                :duct.module/pedestal {}}]
+    (with-system [sys (duct/prep-config config)]
       (let [service (service-fn sys)
             {:keys [status body]} (response-for service
                                                 :get

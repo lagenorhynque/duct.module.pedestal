@@ -8,63 +8,63 @@
 (t/deftest module-test
   (t/testing "environment: production"
     (t/testing "no options"
-      (let [config {:duct.core/project-ns 'some-api
-                    :duct.core/environment :production
+      (let [config {:duct.profile/base
+                    {:duct.core/project-ns 'some-api
+                     :duct.core/environment :production}
+                    :duct.profile/prod {}
                     :duct.module/pedestal {}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :production
-                  :duct.module/pedestal {}
                   :duct.server/pedestal
                   {:base-service sut/prod-service
                    :default? true
                    :dev? false}}
-                 (duct/prep config)))))
+                 (duct/prep-config config)))))
     (t/testing "options specified"
       (let [service-map #:io.pedestal.http{:routes #{}
                                            :port 8888}
-            config {:duct.core/project-ns 'some-api
-                    :duct.core/environment :production
+            config {:duct.profile/base
+                    {:duct.core/project-ns 'some-api
+                     :duct.core/environment :production
+                     :duct.server/pedestal {:service service-map}}
+                    :duct.profile/prod {}
                     :duct.module/pedestal {:default? false
-                                           :dev? true}
-                    :duct.server/pedestal {:service service-map}}]
+                                           :dev? true}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :production
-                  :duct.module/pedestal {:default? false
-                                         :dev? true}
                   :duct.server/pedestal
                   {:service service-map
                    :base-service sut/prod-service
                    :default? false
                    :dev? true}}
-                 (duct/prep config))))))
+                 (duct/prep-config config))))))
   (t/testing "environment: development"
     (t/testing "no options"
-      (let [config {:duct.core/project-ns 'some-api
-                    :duct.core/environment :development
+      (let [config {:duct.profile/base
+                    {:duct.core/project-ns 'some-api
+                     :duct.core/environment :development}
                     :duct.module/pedestal {}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :development
-                  :duct.module/pedestal {}
                   :duct.server/pedestal
                   {:base-service sut/dev-service
                    :default? true
                    :dev? true}}
-                 (duct/prep config)))))
+                 (duct/prep-config config)))))
     (t/testing "options specified"
       (let [service-map #:io.pedestal.http{:routes #{}
                                            :port 8888}
-            config {:duct.core/project-ns 'some-api
-                    :duct.core/environment :development
+            config {:duct.profile/base
+                    {:duct.core/project-ns 'some-api
+                     :duct.core/environment :development
+                     :duct.server/pedestal {:service service-map}}
                     :duct.module/pedestal {:default? false
-                                           :dev? false}
-                    :duct.server/pedestal {:service service-map}}]
+                                           :dev? false}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :development
-                  :duct.module/pedestal {:default? false
-                                         :dev? false}
                   :duct.server/pedestal
                   {:service service-map
                    :base-service sut/dev-service
                    :default? false
                    :dev? false}}
-                 (duct/prep config)))))))
+                 (duct/prep-config config)))))))
