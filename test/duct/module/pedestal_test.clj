@@ -38,9 +38,9 @@
                  (duct/prep-config config))))))
   (t/testing "environment: development"
     (t/testing "no options"
-      (let [config {:duct.profile/dev {}
-                    :duct.profile/base
+      (let [config {:duct.profile/base
                     {:duct.core/project-ns 'some-api}
+                    :duct.profile/dev {}
                     :duct.module/pedestal {}}]
         (t/is (= {:duct.core/project-ns 'some-api
                   :duct.core/environment :development
@@ -52,10 +52,10 @@
     (t/testing "options specified"
       (let [service-map #:io.pedestal.http{:routes #{}
                                            :port 8888}
-            config {:duct.profile/dev {}
-                    :duct.profile/base
+            config {:duct.profile/base
                     {:duct.core/project-ns 'some-api
                      :duct.server/pedestal {:service service-map}}
+                    :duct.profile/dev {}
                     :duct.module/pedestal {:default? false
                                            :dev? false}}]
         (t/is (= {:duct.core/project-ns 'some-api

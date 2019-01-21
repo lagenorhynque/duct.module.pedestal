@@ -1,4 +1,4 @@
-{:deps { ;; Duct
+{:deps {;; Duct
         duct/core {:mvn/version "0.7.0"}
 
         ;; Pedestal

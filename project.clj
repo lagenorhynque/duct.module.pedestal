@@ -26,7 +26,7 @@
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.0"]
                                   [pjstadig/humane-test-output "0.9.0"]]
                    :plugins [[jonase/eastwood "0.3.4"]
-                             [lein-cljfmt "0.6.3"]
+                             [lein-cljfmt "0.6.4"]
                              [lein-cloverage "1.0.13"]
                              [lein-kibit "0.1.6"]]
                    :aliases {"test-coverage" ^{:doc "Execute cloverage."}
