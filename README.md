@@ -19,7 +19,7 @@ To install, add the following to your project `:dependencies`:
 To add this module to your configuration, add a reference to `:duct.module/pedestal` (and `:duct.server/pedestal` if necessary):
 
 ```edn
-{:duct.profile/dev
+{:duct.profile/dev {}
  :duct.profile/base
  {:duct.core/project-ns some-api
 
