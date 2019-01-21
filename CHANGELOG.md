@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [2.0.1] - 2019-01-22
+### Added
+- `deps.edn` for Clojure CLI
+### Changed
+- Remove unnecessary `:duct.core/environment` keys from example config maps
+
 ## [2.0.0] - 2019-01-08
 ### Changed
 - Support [duct/core 0.7.0](https://github.com/duct-framework/core/blob/master/CHANGELOG.md#070-2018-01-05) (**BREAKING CHANGE**)
@@ -28,7 +34,8 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.1...HEAD
+[2.0.1]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/1.0.0...2.0.0
 [1.0.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.3.0...1.0.0
 [0.3.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/0.2.0...0.3.0
