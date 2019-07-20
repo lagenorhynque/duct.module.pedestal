@@ -17,6 +17,9 @@ repl-port
 .nrepl-port
 .repl
 
+# Clojure CLI
+.cpcache/
+
 # Temp Files
 *.orig
 *~
@@ -36,3 +39,5 @@ repl-port
 out/
 build/
 
+# linters
+.eastwood

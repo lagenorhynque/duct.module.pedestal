@@ -2,19 +2,19 @@
         duct/core {:mvn/version "0.7.0"}
 
         ;; Pedestal
-        io.pedestal/pedestal.service {:mvn/version "0.5.5"}
+        io.pedestal/pedestal.service {:mvn/version "0.5.7"}
 
         ;; Pedestal server adapter
         ;; Remove this line and uncomment one of the next lines to
         ;; use Immutant or Tomcat instead of Jetty:
-        io.pedestal/pedestal.jetty {:mvn/version "0.5.5"}
-        ;; [io.pedestal/pedestal.immutant "0.5.5"]
-        ;; [io.pedestal/pedestal.tomcat "0.5.5"]
+        io.pedestal/pedestal.jetty {:mvn/version "0.5.7"}
+        ;; [io.pedestal/pedestal.immutant "0.5.7"]
+        ;; [io.pedestal/pedestal.tomcat "0.5.7"]
 
         ;; logging
         ch.qos.logback/logback-classic {:mvn/version "1.2.3"
                                         :exclusions [org.slf4j/slf4j-api]}
-        org.slf4j/jcl-over-slf4j {:mvn/version "1.7.25"}
-        org.slf4j/jul-to-slf4j {:mvn/version "1.7.25"}
-        org.slf4j/log4j-over-slf4j {:mvn/version "1.7.25"}}
+        org.slf4j/jcl-over-slf4j {:mvn/version "1.7.26"}
+        org.slf4j/jul-to-slf4j {:mvn/version "1.7.26"}
+        org.slf4j/log4j-over-slf4j {:mvn/version "1.7.26"}}
  :paths ["src"]}
