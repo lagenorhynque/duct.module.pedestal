@@ -49,3 +49,10 @@ To add this module to your configuration, add a reference to `:duct.module/pedes
 
 - [lagenorhynque/clj-rest-api](https://github.com/lagenorhynque/clj-rest-api): an example REST API based on Pedestal & Duct
 - [lagenorhynque/aqoursql](https://github.com/lagenorhynque/aqoursql): an example GraphQL API based on Lacinia-Pedestal & Duct
+
+## License
+
+Copyright © 2018-2019 Kent OHASHI
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
