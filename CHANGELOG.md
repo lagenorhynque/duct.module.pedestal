@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [2.1.1] - 2019-12-14
+- Support `:duct.profile/test` and `:test` environment
+
 ## [2.1.0] - 2019-12-02
 - Update dependencies
     - [duct/core 0.8.0](https://github.com/duct-framework/core/blob/master/CHANGELOG.md#080-2019-11-28)
@@ -42,7 +45,8 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.0...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.1...HEAD
+[2.1.1]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.2...2.1.0
 [2.0.2]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.1...2.0.2
 [2.0.1]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.0...2.0.1
