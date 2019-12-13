@@ -38,7 +38,7 @@ To add this module to your configuration, add a reference to `:duct.module/pedes
 - `:duct.module/pedestal` can have two options:
 
     - `:default?`: whether to insert [default-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-default-interceptors) (default: true)
-    - `:dev?`: whether to insert [dev-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-dev-interceptors) (default: true if `:duct.core/environment` is `:development`)
+    - `:dev?`: whether to insert [dev-interceptors](http://pedestal.io/api/pedestal.service/io.pedestal.http.html#var-dev-interceptors) (default: true if `:duct.core/environment` is `:development` or `:test`)
 
 - `:duct.server/pedestal` can have two options:
 

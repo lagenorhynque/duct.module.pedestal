@@ -63,7 +63,8 @@
 
 (def base-service
   {:production prod-service
-   :development dev-service})
+   :development dev-service
+   :test dev-service})
 
 (defmethod ig/init-key :duct.module/pedestal
   [_ {:keys [default? dev?]
@@ -75,4 +76,4 @@
        config
        {:duct.server/pedestal {:base-service (merge/displace (get base-service environment))
                                :default? default?
-                               :dev? (if (some? dev?) dev? (= environment :development))}}))))
+                               :dev? (if (some? dev?) dev? (contains? #{:development :test} environment))}}))))
