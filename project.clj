@@ -8,25 +8,25 @@
                  [duct/core "0.8.0"]
 
                  ;; Pedestal
-                 [io.pedestal/pedestal.service "0.5.7"]
+                 [io.pedestal/pedestal.service "0.5.8"]
 
                  ;; Pedestal server adapter
                  ;; Remove this line and uncomment one of the next lines to
                  ;; use Immutant or Tomcat instead of Jetty:
-                 [io.pedestal/pedestal.jetty "0.5.7"]
-                 ;; [io.pedestal/pedestal.immutant "0.5.7"]
-                 ;; [io.pedestal/pedestal.tomcat "0.5.7"]
+                 [io.pedestal/pedestal.jetty "0.5.8"]
+                 ;; [io.pedestal/pedestal.immutant "0.5.8"]
+                 ;; [io.pedestal/pedestal.tomcat "0.5.8"]
 
                  ;; logging
                  [ch.qos.logback/logback-classic "1.2.3" :exclusions [org.slf4j/slf4j-api]]
-                 [org.slf4j/jcl-over-slf4j "1.7.29"]
-                 [org.slf4j/jul-to-slf4j "1.7.29"]
-                 [org.slf4j/log4j-over-slf4j "1.7.29"]]
+                 [org.slf4j/jcl-over-slf4j "1.7.30"]
+                 [org.slf4j/jul-to-slf4j "1.7.30"]
+                 [org.slf4j/log4j-over-slf4j "1.7.30"]]
   :deploy-repositories [["releases" :clojars]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.1"]
                                   [pjstadig/humane-test-output "0.10.0"]]
-                   :plugins [[jonase/eastwood "0.3.6"]
-                             [lein-cljfmt "0.6.6"]
+                   :plugins [[jonase/eastwood "0.3.11"]
+                             [lein-cljfmt "0.6.7"]
                              [lein-cloverage "1.1.2"]
                              [lein-kibit "0.1.8"]]
                    :aliases {"test-coverage" ^{:doc "Execute cloverage."}
