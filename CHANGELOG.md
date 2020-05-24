@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [2.1.2] - 2020-05-24
+- Update dependencies
+    - [Pedestal 0.5.8](https://github.com/pedestal/pedestal/blob/master/CHANGELOG.md#058---may-22-2020)
+
 ## [2.1.1] - 2019-12-14
 - Support `:duct.profile/test` and `:test` environment
 
@@ -45,7 +49,8 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.1...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.2...HEAD
+[2.1.2]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.2...2.1.0
 [2.0.2]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.0.1...2.0.2
