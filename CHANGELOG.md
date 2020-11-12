@@ -4,17 +4,21 @@ All notable changes to this project will be documented in this file. This change
 ## [Unreleased]
 
 ## [2.1.2] - 2020-05-24
+### Changed
 - Update dependencies
     - [Pedestal 0.5.8](https://github.com/pedestal/pedestal/blob/master/CHANGELOG.md#058---may-22-2020)
 
 ## [2.1.1] - 2019-12-14
+### Added
 - Support `:duct.profile/test` and `:test` environment
 
 ## [2.1.0] - 2019-12-02
+### Changed
 - Update dependencies
     - [duct/core 0.8.0](https://github.com/duct-framework/core/blob/master/CHANGELOG.md#080-2019-11-28)
 
 ## [2.0.2] - 2019-07-21
+### Changed
 - Update dependencies
     - [Pedestal 0.5.7](https://github.com/pedestal/pedestal/blob/master/CHANGELOG.md#057---june-21-2019)
 
