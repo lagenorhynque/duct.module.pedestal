@@ -1,7 +1,8 @@
 (ns duct.module.pedestal-test
-  (:require [clojure.test :as t]
-            [duct.core :as duct]
-            [duct.module.pedestal :as sut]))
+  (:require
+   [clojure.test :as t]
+   [duct.core :as duct]
+   [duct.module.pedestal :as sut]))
 
 (duct/load-hierarchy)
 

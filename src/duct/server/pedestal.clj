@@ -1,7 +1,8 @@
 (ns duct.server.pedestal
-  (:require [duct.core :as duct]
-            [integrant.core :as ig]
-            [io.pedestal.http :as http]))
+  (:require
+   [duct.core :as duct]
+   [integrant.core :as ig]
+   [io.pedestal.http :as http]))
 
 (defmethod ig/init-key :duct.server/pedestal
   [_ {:keys [service base-service default? dev?]}]

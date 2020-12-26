@@ -1,24 +1,27 @@
 (ns duct.server.pedestal-test
-  (:require [clojure.test :as t]
-            [duct.core :as duct]
-            [integrant.core :as ig]
-            [io.pedestal.http.route :as route]
-            [io.pedestal.test :refer [response-for]]))
+  (:require
+   [clojure.test :as t]
+   [duct.core :as duct]
+   [integrant.core :as ig]
+   [io.pedestal.http.route :as route]
+   [io.pedestal.test :refer [response-for]]))
 
 (duct/load-hierarchy)
 
 ;; example handler
-(defn respond-hello [request]
+(defn respond-hello [_request]
   {:status 200
    :body "Hello, world!"})
 
 ;; example routes
-(def routes (route/expand-routes
-             #{["/greet" :get respond-hello :route-name :greet]}))
+(def routes
+  (route/expand-routes
+   #{["/greet" :get respond-hello :route-name :greet]}))
 
 ;; example service map
-(def service-map #:io.pedestal.http{:routes routes
-                                    :port 8888})
+(def service-map
+  #:io.pedestal.http{:routes routes
+                     :port 8888})
 
 (def url-for (route/url-for-routes routes))
 

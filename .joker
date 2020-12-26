@@ -1,0 +1,6 @@
+{:ignored-file-regexes [#"profiles.clj"]
+ :ignored-unused-namespaces []
+ :known-macros [clojure.spec.alpha/fdef
+                clojure.test.check.clojure-test/defspec
+                clojure.test.check.properties/for-all]
+ :known-tags []}

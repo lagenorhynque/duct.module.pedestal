@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/clojure:openjdk-11-lein-2.9.1
+      - image: circleci/clojure:openjdk-11-lein-2.9.5
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -36,6 +36,27 @@ jobs:
       # run tests!
       - run: lein test-coverage
       - run: lein lint
+
+      - run:
+          name: Install static code analysis tools
+          environment:
+            CLJSTYLE_VERSION: 0.14.0
+            CLJ_KONDO_VERSION: 2020.12.12
+            JOKER_VERSION: 0.15.7
+          command: |
+            # cljstyle
+            wget https://github.com/greglook/cljstyle/releases/download/${CLJSTYLE_VERSION}/cljstyle_${CLJSTYLE_VERSION}_linux.tar.gz
+            tar -xzf cljstyle_${CLJSTYLE_VERSION}_linux.tar.gz
+            sudo mv -f cljstyle /usr/local/bin/
+            # clj-kondo
+            curl -sLO https://raw.githubusercontent.com/borkdude/clj-kondo/master/script/install-clj-kondo
+            chmod +x install-clj-kondo
+            sudo ./install-clj-kondo --version ${CLJ_KONDO_VERSION}
+            # Joker
+            wget https://github.com/candid82/joker/releases/download/v${JOKER_VERSION}/joker-${JOKER_VERSION}-linux-amd64.zip
+            unzip -qq joker-${JOKER_VERSION}-linux-amd64.zip
+            sudo mv -f joker /usr/local/bin/
+      - run: make lint
 
       - run: bash <(curl -s https://codecov.io/bash) -f '!*.txt'
 

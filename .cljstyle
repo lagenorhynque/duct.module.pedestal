@@ -1,0 +1,10 @@
+{:files {:ignore #{}}
+ :rules {:blank-lines {:max-consecutive 1
+                       :padding-lines 1}
+         :functions {:enabled? false}
+         :indentation {:indents {defspec [[:inner 0]]
+                                 fdef [[:inner 0]]
+                                 for-all [[:inner 0]]}
+                       :list-indent 1}
+         :namespaces {:indent-size 1}
+         :types {:enabled? false}}}

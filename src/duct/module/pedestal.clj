@@ -1,8 +1,9 @@
 (ns duct.module.pedestal
-  (:require [duct.core :as duct]
-            [duct.core.merge :as merge]
-            [integrant.core :as ig]
-            [io.pedestal.http :as http]))
+  (:require
+   [duct.core :as duct]
+   [duct.core.merge :as merge]
+   [integrant.core :as ig]
+   [io.pedestal.http :as http]))
 
 (defn- get-environment [config options]
   (get options :environment (:duct.core/environment config :production)))
