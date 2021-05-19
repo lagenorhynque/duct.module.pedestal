@@ -2,14 +2,14 @@
         duct/core {:mvn/version "0.8.0"}
 
         ;; Pedestal
-        io.pedestal/pedestal.service {:mvn/version "0.5.8"}
+        io.pedestal/pedestal.service {:mvn/version "0.5.9"}
 
         ;; Pedestal server adapter
         ;; Remove this line and uncomment one of the next lines to
         ;; use Immutant or Tomcat instead of Jetty:
-        io.pedestal/pedestal.jetty {:mvn/version "0.5.8"}
-        ;; [io.pedestal/pedestal.immutant "0.5.8"]
-        ;; [io.pedestal/pedestal.tomcat "0.5.8"]
+        io.pedestal/pedestal.jetty {:mvn/version "0.5.9"}
+        ;; [io.pedestal/pedestal.immutant "0.5.9"]
+        ;; [io.pedestal/pedestal.tomcat "0.5.9"]
 
         ;; logging
         ch.qos.logback/logback-classic {:mvn/version "1.2.3"
