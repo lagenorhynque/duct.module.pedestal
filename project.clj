@@ -1,4 +1,4 @@
-(defproject duct.module.pedestal "2.1.4-SNAPSHOT"
+(defproject duct.module.pedestal "2.1.4"
   :description "Duct module for Pedestal"
   :url "https://github.com/lagenorhynque/duct.module.pedestal"
   :license {:name "Eclipse Public License"
