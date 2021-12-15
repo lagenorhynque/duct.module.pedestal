@@ -18,10 +18,10 @@
                  ;; [io.pedestal/pedestal.tomcat "0.5.9"]
 
                  ;; logging
-                 [ch.qos.logback/logback-classic "1.2.3" :exclusions [org.slf4j/slf4j-api]]
-                 [org.slf4j/jcl-over-slf4j "1.7.30"]
-                 [org.slf4j/jul-to-slf4j "1.7.30"]
-                 [org.slf4j/log4j-over-slf4j "1.7.30"]]
+                 [ch.qos.logback/logback-classic "1.2.8" :exclusions [org.slf4j/slf4j-api]]
+                 [org.slf4j/jcl-over-slf4j "1.7.32"]
+                 [org.slf4j/jul-to-slf4j "1.7.32"]
+                 [org.slf4j/log4j-over-slf4j "1.7.32"]]
   :deploy-repositories [["releases" :clojars]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.3"]
                                   [pjstadig/humane-test-output "0.11.0"]]
