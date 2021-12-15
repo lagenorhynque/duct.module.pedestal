@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [2.1.4] - 2021-12-15
+### Changed
+- Update dependencies
+    - [Logback 1.2.8](http://logback.qos.ch/news.html)
+        - 14th of December, 2021, Release of version 1.2.8
+
 ## [2.1.3] - 2021-05-19
 ### Changed
 - Update dependencies
@@ -58,7 +64,8 @@ All notable changes to this project will be documented in this file. This change
     - useful interceptors
     - default configuration for development and production
 
-[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.3...HEAD
+[Unreleased]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.4...HEAD
+[2.1.4]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.3...2.1.4
 [2.1.3]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.2...2.1.3
 [2.1.2]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/lagenorhynque/duct.module.pedestal/compare/2.1.0...2.1.1
