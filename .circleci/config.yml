@@ -41,8 +41,8 @@ jobs:
           name: Install static code analysis tools
           environment:
             CLJSTYLE_VERSION: 0.15.0
-            CLJ_KONDO_VERSION: 2021.04.23
-            JOKER_VERSION: 0.17.1
+            CLJ_KONDO_VERSION: 2021.12.01
+            JOKER_VERSION: 0.17.3
           command: |
             # cljstyle
             wget https://github.com/greglook/cljstyle/releases/download/${CLJSTYLE_VERSION}/cljstyle_${CLJSTYLE_VERSION}_linux.tar.gz
