@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/clojure:openjdk-11-lein-2.9.5
+      - image: cimg/clojure:1.11.1-openjdk-17.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -41,8 +41,8 @@ jobs:
           name: Install static code analysis tools
           environment:
             CLJSTYLE_VERSION: 0.15.0
-            CLJ_KONDO_VERSION: 2021.12.01
-            JOKER_VERSION: 0.17.3
+            CLJ_KONDO_VERSION: 2023.12.15
+            JOKER_VERSION: 1.3.4
           command: |
             # cljstyle
             wget https://github.com/greglook/cljstyle/releases/download/${CLJSTYLE_VERSION}/cljstyle_${CLJSTYLE_VERSION}_linux.tar.gz
@@ -53,8 +53,8 @@ jobs:
             chmod +x install-clj-kondo
             sudo ./install-clj-kondo --version ${CLJ_KONDO_VERSION}
             # Joker
-            wget https://github.com/candid82/joker/releases/download/v${JOKER_VERSION}/joker-${JOKER_VERSION}-linux-amd64.zip
-            unzip -qq joker-${JOKER_VERSION}-linux-amd64.zip
+            wget https://github.com/candid82/joker/releases/download/v${JOKER_VERSION}/joker-linux-amd64.zip
+            unzip -qq joker-linux-amd64.zip
             sudo mv -f joker /usr/local/bin/
       - run: make lint
 
